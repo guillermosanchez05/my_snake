@@ -34,6 +34,10 @@ void displayBoard(){
     printf("\n");
 }
 
+void drawSnake(){
+    
+}
+
 int main(){
     displayBoard();
     return 0;
