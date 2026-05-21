@@ -23,5 +23,8 @@ $(BUILDDIR):
 clean: 
 		rm -rf $(BUILDDIR)
 
-# Mark objectives that aren't files
+play: my_snake
+		./my_snake
+
+# Mark targets that aren't files
 .PHONY: all clean
