@@ -1,6 +1,6 @@
 
 /* Struct to represent a point in space*/
-struct Point{
+struct Point {
     int x;
     int y;
 };

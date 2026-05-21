@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+#include "snake.h"
+
 // To get the view of a square in a terminal, width has to be twice the height
 #define BOARD_WIDTH 32 // 32 x 16 board
 #define BOARD_HEIGHT 16

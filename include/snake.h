@@ -1,4 +1,4 @@
-#include <point.h>
+#include "point.h"
 
 #define MAX_SIZE 8 // The maximum lenght of the snake will be 8 (win condition)
 
@@ -6,4 +6,4 @@
 
 struct Snake{
     Point snake[16];
-}
+};
