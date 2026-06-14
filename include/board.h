@@ -22,7 +22,19 @@ class Board {
         std::array<std::array<char, WIDTH>, HEIGHT> matrix;
 
     public: // methods
-        void display();
+        /** 
+         * @brief Initializes the board: filling the board matrix with empty or
+         * filled characters and both the snake's and food's initial positions 
+         * (centered, length = 3, direction = RIGHT for the snake and random for
+         * the food).
+        */
+        void init();
+
+        /** 
+         * @brief Updates the board on the screen
+        */
+        void display() const;
+
 };
 
 #endif // BOARD_H
