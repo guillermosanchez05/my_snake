@@ -1,3 +1,6 @@
+#ifndef BOARD_H
+#define BOARD_H
+
 #include <array>
 #include <cstddef> // size_t
 
@@ -21,3 +24,5 @@ class Board {
     public: // methods
         void display();
 };
+
+#endif // BOARD_H

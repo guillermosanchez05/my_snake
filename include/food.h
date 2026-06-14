@@ -1,3 +1,5 @@
+#ifndef FOOD_H
+#define FOOD_H
 #include "coord.h"
 
 /**
@@ -10,3 +12,5 @@ class Food{
     // TODO
 
 };
+
+#endif // FOOD_H
