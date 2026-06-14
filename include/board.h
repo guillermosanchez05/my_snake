@@ -18,7 +18,7 @@ class Board {
         static constexpr char CHAR_SNAKE = '█';
         static constexpr char CHAR_FOOD = '●';
 
-        // The board is a 2D fixed-lenght array (defined in stack, vector -> heap)
+        // The board is a 2D fixed-length array (defined in stack)
         std::array<std::array<char, WIDTH>, HEIGHT> matrix;
 
     public: // methods
