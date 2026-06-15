@@ -13,7 +13,7 @@ class Snake{
     };
 
     // Public method to check the snake's direction
-    Direction get_direction() const {} // Const forces the method to be readonly
+    Direction get_direction() const; // Const forces the method to be readonly
 
 
     private:

@@ -15,8 +15,8 @@ class Board {
         // Characters to draw the actual board
         static constexpr char CHAR_EMPTY = ' ';
         static constexpr char CHAR_WALL = '#';
-        static constexpr char CHAR_SNAKE = '█';
-        static constexpr char CHAR_FOOD = '●';
+        static constexpr char CHAR_SNAKE = '0';
+        static constexpr char CHAR_FOOD = '+';
 
         // The board is a 2D fixed-length array (defined in stack)
         std::array<std::array<char, WIDTH>, HEIGHT> matrix;

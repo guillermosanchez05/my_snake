@@ -3,8 +3,8 @@
 
 void Board::init(){
     // Optimise cache hits
-    for (int j = 0; j < HEIGHT; j++){
-        for (int i = 0; i < WIDTH; i++){
+    for (int j = 0; j < static_cast<int>(HEIGHT); j++){
+        for (int i = 0; i < static_cast<int>(WIDTH); i++){
             matrix[i][j] = CHAR_EMPTY;
         }
     }
