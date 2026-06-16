@@ -10,8 +10,8 @@
 class Board {
     public:
         // Public constants so other classes can check them
-        static constexpr std::size_t WIDTH = 64;
-        static constexpr std::size_t HEIGHT = 64;
+        static constexpr std::size_t WIDTH = 32;
+        static constexpr std::size_t HEIGHT = 16;
 
     private:
 

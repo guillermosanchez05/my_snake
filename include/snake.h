@@ -1,7 +1,6 @@
 #ifndef SNAKE_H
 #define SNAKE_H
 #include "coord.h"
-#include "board.h"
 #include <deque>
 
 class Snake{
@@ -18,7 +17,7 @@ class Snake{
     /** 
      * @brief Returns the snake's current direction
     */
-    Direction get_direction() const; // Const forces the method to be readonly
+    Direction get_direction() const;
 
     /** 
      * @brief  Returns the dqueue associated with the snake's body

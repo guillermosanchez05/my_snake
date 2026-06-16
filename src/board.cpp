@@ -14,10 +14,13 @@ void Board::init(const Snake& snake, const Food& food){
         }
     }
 
-    // Obtain snake's initial position
+    // Obtain snake's body
     std::deque<Coord> body = snake.get_body();
 
-    // 
+    // Place the snake over the board
+    for (const auto& segment : body){
+        matrix[segment.y][segment.x] = CHAR_SNAKE;
+    }
 }
 
 void Board::display() const {
