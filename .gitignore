@@ -1,3 +1,4 @@
 tutorials/
 .vscode/
 build/
+.aider*

@@ -4,6 +4,9 @@
 #include <array>
 #include <cstddef> // size_t
 
+#include "snake.h"
+#include "food.h"
+
 class Board {
     public:
         // Public constants so other classes can check them
@@ -28,7 +31,7 @@ class Board {
          * (centered, length = 3, direction = RIGHT for the snake and random for
          * the food).
         */
-        void init();
+        void init(const Snake& snake, const Food& food); // Readonly parameters
 
         /** 
          * @brief Updates the board on the screen
