@@ -1,6 +1,6 @@
 #include "snake.h"
 
-// Definition of the snake class methods
+// Definition of the Snake class methods
 
 Snake::Direction Snake::get_direction() const {
     return current_direction;
@@ -25,5 +25,5 @@ void Snake::init(std::size_t width, std::size_t height){
     body.push_back(Coord{startX, startY});
     body.push_back(Coord{startX - 1, startY});
     body.push_back(Coord{startX - 2, startY});
-    
+
 }

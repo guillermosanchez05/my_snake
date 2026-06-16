@@ -36,3 +36,7 @@ void Board::display() const {
         std::cout << '\n';
     }
 }
+
+Coord Board::get_random_coord() const{}
+
+bool Board::is_coord_empty(int x, int y) const{}

@@ -38,6 +38,16 @@ class Board {
         */
         void display() const;
 
+        /**
+         * @brief Returns a random Coord inside of the Board
+         */
+        Coord get_random_coord() const;
+
+        /**
+         * @brief Checks if a Coord is empty by looking at its content
+         */
+        bool is_coord_empty(int x, int y) const;
+
 };
 
 #endif // BOARD_H
