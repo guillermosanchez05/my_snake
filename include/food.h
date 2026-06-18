@@ -1,7 +1,9 @@
 #ifndef FOOD_H
 #define FOOD_H
 #include "coord.h"
-#include <cstddef> // for size_t
+
+// Forward declaration to avoid circular dependency
+class Board;
 
 /**
  * @brief Class to represent the position of Food in the Board.
@@ -13,11 +15,10 @@ class Food{
         /**
          * @brief Initializes the food by giving a random value chosen from the
          * empty cells of the board's matrix. It should be called in the main 
-         * loop when necessary, passing the Board's size as arguments.
-         * @param width Board's width
-         * @param height Board's height
+         * loop when necessary, passing a reference to the Board.
+         * @param board Reference to the Board object
          */
-        void init(std::size_t width, std::size_t height);
+        void init(const Board& board);
 
     private:
         // Food is defined by its position (a random position)
