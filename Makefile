@@ -19,9 +19,9 @@ BIN_DIR = bin/
 all: $(TARGET)
 	
 # Executable	
-$(TARGET): $(BUILD_DIR)main.o $(BUILD_DIR)board.o $(BUILD_DIR)snake.o
+$(TARGET): $(BUILD_DIR)main.o $(BUILD_DIR)board.o $(BUILD_DIR)snake.o $(BUILD_DIR)food.o
 	mkdir -p $(BIN_DIR)
-	$(CXX) $(BUILD_DIR)main.o $(BUILD_DIR)board.o $(BUILD_DIR)snake.o -o $(TARGET)
+	$(CXX) $(BUILD_DIR)main.o $(BUILD_DIR)board.o $(BUILD_DIR)snake.o $(BUILD_DIR)food.o -o $(TARGET)
 
 # main.o
 $(BUILD_DIR)main.o: $(SRC_DIR)main.cpp $(INC_DIR)snake.h $(INC_DIR)board.h
@@ -37,6 +37,11 @@ $(BUILD_DIR)board.o: $(SRC_DIR)board.cpp $(INC_DIR)board.h $(INC_DIR)coord.h
 $(BUILD_DIR)snake.o: $(SRC_DIR)snake.cpp $(INC_DIR)snake.h $(INC_DIR)coord.h $(INC_DIR)food.h
 	mkdir -p $(BUILD_DIR)
 	$(CXX) $(CXXFLAGS) -c $(SRC_DIR)snake.cpp -o $(BUILD_DIR)snake.o
+
+# food.o
+$(BUILD_DIR)food.o: $(SRC_DIR)food.cpp $(INC_DIR)food.h $(INC_DIR)coord.h $(INC_DIR)board.h
+	mkdir -p $(BUILD_DIR)
+	$(CXX) $(CXXFLAGS) -c $(SRC_DIR)food.cpp -o $(BUILD_DIR)food.o
 
 clean:
 	rm -rf $(BUILD_DIR) $(BIN_DIR)

@@ -3,7 +3,7 @@
 #include <cstdlib>   // srand()                                    
 #include <ctime>     // time()
 
-void Board::init(const Snake& snake, const Food& food){
+void Board::init(const Snake& snake, const Food& initial_food){
     // First, fill the matrix with empty chars while optimising cache hits
     for (int j = 0; j < static_cast<int>(HEIGHT); j++){
         for (int i = 0; i < static_cast<int>(WIDTH); i++){
@@ -23,6 +23,12 @@ void Board::init(const Snake& snake, const Food& food){
     for (const auto& segment : body){
         matrix[segment.y][segment.x] = CHAR_SNAKE;
     }
+
+    // Obtain food's position
+    Coord food_pos = initial_food.get_position();
+
+    // Place it on the board
+    matrix[food_pos.y][food_pos.x] = CHAR_FOOD;
 }
 
 void Board::display() const {

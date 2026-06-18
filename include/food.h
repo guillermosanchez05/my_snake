@@ -2,6 +2,7 @@
 #define FOOD_H
 #include "coord.h"
 
+
 // Forward declaration to avoid circular dependency
 class Board;
 
@@ -19,6 +20,11 @@ class Food{
          * @param board Reference to the Board object
          */
         void init(const Board& board);
+
+        /** 
+         * @brief  Returns the Coord associated with the food's position
+        */
+        const Coord& get_position() const;
 
     private:
         // Food is defined by its position (a random position)

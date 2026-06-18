@@ -1,6 +1,3 @@
-#include <cstdlib>
-#include <ctime>
-
 #include "food.h"
 #include "board.h"
 
@@ -14,4 +11,7 @@ void Food::init(const Board& board){
     } while (!board.is_coord_empty(position.x, position.y));
 }
 
-// TODO: print the food on the board
+const Coord& Food::get_position() const{
+    return position;
+}
+

@@ -1,4 +1,6 @@
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 #include "board.h"
 
 int main(){
@@ -10,13 +12,13 @@ int main(){
     Snake snake;
     snake.init(Board::WIDTH, Board::HEIGHT);
 
-    // TODO: Create the food¿?
-
+    // Create both the board and the food
+    Board board;
     Food initial_food;
 
-    // Create the board
-    Board board;
+    // Initialize them
     board.init(snake, initial_food);
+    initial_food.init(board);
     
     // Display the initial board
     board.display();
