@@ -1,5 +1,7 @@
 #include "board.h"
 #include <iostream>
+#include <cstdlib>   // srand()                                    
+#include <ctime>     // time()
 
 void Board::init(const Snake& snake, const Food& food){
     // First, fill the matrix with empty chars while optimising cache hits
@@ -32,11 +34,24 @@ void Board::display() const {
             std::cout << matrix[i][j];
         }
         
-        // When we end a row, we add a newline
+        // When a row ends, add a newline
         std::cout << '\n';
     }
 }
 
-Coord Board::get_random_coord() const{}
+Coord Board::get_random_coord() const{
 
-bool Board::is_coord_empty(int x, int y) const{}
+    // First, obtain random indexes
+    int random_x = rand() % (WIDTH - 2) + 1; // make sure its not a Wall
+    int random_y = rand() % (HEIGHT - 2) + 1;
+
+    // Return the coord
+    Coord random_coord = {random_x, random_y};
+
+    return random_coord;
+}
+
+bool Board::is_coord_empty(int x, int y) const{
+    // Check the matrix[y][x] CHAR
+    return (matrix[y][x] == CHAR_EMPTY);
+}

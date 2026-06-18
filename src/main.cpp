@@ -3,6 +3,9 @@
 
 int main(){
 
+    // Time-based random seed, will be used for some functions
+    srand(time(0));
+
     // Create the snake (which will be placed on the Board)
     Snake snake;
     snake.init(Board::WIDTH, Board::HEIGHT);
