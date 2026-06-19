@@ -45,6 +45,11 @@ class Board {
         void display() const;
 
         /**
+         * @brief Updates the board's matrix with both food's and snake's state
+        */
+        void update(const Snake& snake, const Food& food);
+
+        /**
          * @brief Returns a random Coord inside of the Board
          */
         Coord get_random_coord() const;

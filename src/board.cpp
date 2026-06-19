@@ -64,3 +64,25 @@ bool Board::is_coord_empty(int x, int y) const{
 bool Board::is_wall(int x, int y) const{
     return (matrix[y][x] == CHAR_WALL);
 }
+
+void Board::update(const Snake& snake, const Food& food) {
+    // Clean the board optimising cache hits
+    for (int j = 0; j < static_cast<int>(HEIGHT); j++){
+        for (int i = 0; i < static_cast<int>(WIDTH); i++){
+            if (j == 0 || i == 0 || j == (HEIGHT - 1) || i == (WIDTH - 1)){
+                matrix[j][i] = CHAR_WALL;
+            } else {
+                matrix[j][i] = CHAR_EMPTY;
+            }
+        }
+    }
+
+    // Place the snake
+    for (const auto& segment : snake.get_body()){
+        matrix[segment.y][segment.x] = CHAR_SNAKE;
+    }
+
+    // Place the food
+    Coord food_pos = food.get_position();
+    matrix[food_pos.y][food_pos.x] = CHAR_FOOD;
+}
