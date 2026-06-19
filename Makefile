@@ -21,7 +21,7 @@ all: $(TARGET)
 # Executable	
 $(TARGET): $(BUILD_DIR)main.o $(BUILD_DIR)board.o $(BUILD_DIR)snake.o $(BUILD_DIR)food.o
 	mkdir -p $(BIN_DIR)
-	$(CXX) $(BUILD_DIR)main.o $(BUILD_DIR)board.o $(BUILD_DIR)snake.o $(BUILD_DIR)food.o -o $(TARGET)
+	$(CXX) $(BUILD_DIR)main.o $(BUILD_DIR)board.o $(BUILD_DIR)snake.o $(BUILD_DIR)food.o -o $(TARGET) -lncurses
 
 # main.o
 $(BUILD_DIR)main.o: $(SRC_DIR)main.cpp $(INC_DIR)snake.h $(INC_DIR)board.h

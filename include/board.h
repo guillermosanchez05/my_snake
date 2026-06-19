@@ -54,6 +54,11 @@ class Board {
          */
         bool is_coord_empty(int x, int y) const;
 
+        /**
+         * @brief Checks if a cell is a wall
+         */
+        bool is_wall(int x, int y) const;
+
 };
 
 #endif // BOARD_H

@@ -1,5 +1,5 @@
 #include "board.h"
-#include <iostream>
+#include <ncurses.h>
 #include <cstdlib>   // srand()                                    
 #include <ctime>     // time()
 
@@ -35,16 +35,13 @@ void Board::place_food(const Food& food){
 
 void Board::display() const {
     // Iterate over rows
-    for (std::size_t i = 0; i < HEIGHT; ++i) {
-        
+    for (std::size_t y = 0; y < HEIGHT; ++y) {
         // Iterate over the columns of that row
-        for (std::size_t j = 0; j < WIDTH; ++j) {
-            std::cout << matrix[i][j];
+        for (std::size_t x = 0; x < WIDTH; ++x) {
+            mvaddch(y, x, matrix[y][x]);
         }
-        
-        // When a row ends, add a newline
-        std::cout << '\n';
     }
+    refresh();
 }
 
 Coord Board::get_random_coord() const{
@@ -62,4 +59,8 @@ Coord Board::get_random_coord() const{
 bool Board::is_coord_empty(int x, int y) const{
     // Check the matrix[y][x] CHAR
     return (matrix[y][x] == CHAR_EMPTY);
+}
+
+bool Board::is_wall(int x, int y) const{
+    return (matrix[y][x] == CHAR_WALL);
 }
