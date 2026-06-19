@@ -10,7 +10,7 @@ const std::deque<Coord>& Snake::get_body() const{
     return body;
 }
 
-void Snake::init(std::size_t width, std::size_t height){
+Snake::Snake(std::size_t width, std::size_t height){
     // Clear its body in case it was already initialized
     body.clear();
 

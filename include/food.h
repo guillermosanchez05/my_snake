@@ -14,12 +14,11 @@ class Board;
 class Food{
     public:
         /**
-         * @brief Initializes the food by giving a random value chosen from the
-         * empty cells of the board's matrix. It should be called in the main 
-         * loop when necessary, passing a reference to the Board.
+         * @brief Constructs the food by giving a random value chosen from the
+         * empty cells of the board's matrix.
          * @param board Reference to the Board object
          */
-        void init(const Board& board);
+        Food(const Board& board);
 
         /** 
          * @brief  Returns the Coord associated with the food's position

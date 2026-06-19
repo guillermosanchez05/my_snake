@@ -25,13 +25,11 @@ class Snake{
     const std::deque<Coord>& get_body() const;
 
     /**
-     * @brief Initializes the snake: (centered, length = 3, direction = RIGHT).
-     * Should be called in the main loop when necessary, passing the Board's size
-     * as arguments.
+     * @brief Constructs the snake: (centered, length = 3, direction = RIGHT).
      * @param width Board's width
      * @param height Board's height
      */
-    void init(std::size_t width, std::size_t height);
+    Snake(std::size_t width, std::size_t height);
 
     private:
     

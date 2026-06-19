@@ -3,7 +3,7 @@
 
 // Definition of the Food class methods
 
-void Food::init(const Board& board){
+Food::Food(const Board& board){
     do {
         // Obtain a random coordinate that is not a wall and assign the Food's position
         position = board.get_random_coord();

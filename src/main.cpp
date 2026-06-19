@@ -9,16 +9,16 @@ int main(){
     srand(time(0));
 
     // Create the snake (which will be placed on the Board)
-    Snake snake;
-    snake.init(Board::WIDTH, Board::HEIGHT);
+    Snake snake(Board::WIDTH, Board::HEIGHT);
 
-    // Create both the board and the food
-    Board board;
-    Food initial_food;
+    // Create the board (with the snake placed)
+    Board board(snake);
 
-    // Initialize them
-    board.init(snake, initial_food);
-    initial_food.init(board);
+    // Create the food (needs the board to find an empty cell)
+    Food initial_food(board);
+
+    // Place the food on the board
+    board.place_food(initial_food);
     
     // Display the initial board
     board.display();

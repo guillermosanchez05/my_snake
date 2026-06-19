@@ -26,12 +26,18 @@ class Board {
 
     public: // methods
         /** 
-         * @brief Initializes the board: filling the board matrix with empty or
-         * filled characters and both the snake's and food's initial positions 
-         * (centered, length = 3, direction = RIGHT for the snake and random for
-         * the food).
+         * @brief Constructs the board: filling the board matrix with empty or
+         * filled characters and the snake's initial position 
+         * (centered, length = 3, direction = RIGHT for the snake).
+         * @param snake Reference to the Snake object (already constructed)
         */
-        void init(const Snake& snake, const Food& food); // Readonly parameters
+        Board(const Snake& snake);
+
+        /** 
+         * @brief Places the food on the board after it has been constructed.
+         * @param food Reference to the Food object (already constructed)
+        */
+        void place_food(const Food& food);
 
         /** 
          * @brief Updates the board on the screen
