@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
-#include <queue>      // Added to handle the input queue structure
+#include <queue>
 #include <ncurses.h>
 #include "board.h"
 
@@ -10,11 +10,11 @@ int main(){
     // Time-based random seed, will be used for some functions
     srand(time(0));
 
-    // Initialize ncurses
-    initscr();
-    cbreak();
-    noecho();
-    keypad(stdscr, TRUE);
+    // Ncurses
+    initscr(); // Initialize ncurses
+    cbreak(); // Keyboard input instantly available
+    noecho(); // Avoid printing pressed keys
+    keypad(stdscr, TRUE); // Enable special key reading
     timeout(0);   // Non-blocking input, returns ERR immediately if no key is pressed
     curs_set(0);  // Hide cursor
 
@@ -34,16 +34,19 @@ int main(){
     board.display();
     refresh();
 
+    // Flags for game state
     bool game_over = false;
     bool game_won = false;
 
-    // Buffer queue to store pending movements
+    // Buffer queue to store pending movements, fixes the issue with simultaneous keystrokes
     std::queue<int> input_queue;
 
+    // Main game loop
     while (!game_over) {
         // Collect all available inputs in this frame
         int ch;
         while ((ch = getch()) != ERR) {
+            // Press q to quit the game
             if (ch == 'q') {
                 game_over = true;
             }
@@ -64,6 +67,7 @@ int main(){
             int current_ch = input_queue.front();
             input_queue.pop();
             
+            // Evaluate the current pressed key
             switch (current_ch) {
                 case KEY_UP:    snake.change_direction(Snake::Direction::UP);    break;
                 case KEY_DOWN:  snake.change_direction(Snake::Direction::DOWN);  break;
@@ -72,7 +76,7 @@ int main(){
             }
         }
 
-        // Move the snake
+        // Move the snake, game ends if it collides against a wall or itself
         if (!snake.move(board, food)) {
             game_over = true;
             break;
@@ -105,11 +109,11 @@ int main(){
         clear();
         board.display();
 
-        // Control game speed
+        // Control game speed by pausing the execution for 200 ms
         napms(200);
     }
 
-    // Clean up ncurses
+    // Clean up ncurses, restores the terminal configuration
     endwin();
 
     // Print final game result
