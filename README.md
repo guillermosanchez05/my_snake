@@ -1,4 +1,4 @@
-# Snake (C++ / ncurses)
+# Snake (C++)
 
 A simple terminal-based Snake game written in C++. This project was built as an exercise to **learn the basics of C++**.
 
@@ -52,7 +52,7 @@ This was created purely for learning purposes, i.e. practice fundamental C++ con
 ---
 ---
 
-# Snake (C++ / ncurses) — Versión en Español
+# Snake (C++) — Versión en Español
 
 Un Snake sencillo hecho en la terminal y escrito en C++. Es un proyecto construido principalmente para aprender los **conceptos básicos de C++**.
 
